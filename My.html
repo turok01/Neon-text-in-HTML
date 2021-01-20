@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>[CSS3] Neon Glow</title>
-    <!<link rel="stylesheet" href="css/neon.css">
+    <link rel="stylesheet" href="css/my.css">
 	<style>
 	@font-face {
 	  font-family: 'Audiowide';
@@ -14,15 +14,84 @@
 	</style>
   </head>
 
-<body style="background-color: #222222;>
-  
+<!--body style="background-color: #222222;-->
 
-<div id="container" >
+<!-- settings box -->
+
+<!-- the gear icon that opens the box when you click on it -->
+<input id="settings-btn" type="checkbox" class="settings-btn">
+<label for="settings-btn" class="settings-box-element"><i class="fa fa-2x fa-gear">butt</i></label>
+
+<!-- the white box that contains the buttons -->
+<div class="buttons-wrapper settings-box-element"></div>
+
+<!-- background styles -->
+
+<!-- light background (#eaeaea) -->
+<input id="light-layout" class="light-layout" type="radio" name="layout" checked>
+<label for="light-layout" class="layout-buttons settings-box-element">
+Light Background
+</label>
+
+<!-- dark background (#494949) -->
+<input id="dark-layout" class="dark-layout" type="radio" name="layout">
+<label for="dark-layout" class="layout-buttons settings-box-element">
+Dark Background
+</label>
+
+<!-- image background (you can use any image of your choice) -->
+<input id="image-layout" class="image-layout" type="radio" name="layout">
+<label for="image-layout" class="layout-buttons settings-box-element">
+Image Background
+</label>
+
+<!-- pattern background (you can use any pattern of your choice) -->
+<input id="pattern-layout" class="pattern-layout" type="radio" name="layout">
+<label for="pattern-layout" class="layout-buttons settings-box-element">
+Pattern Background
+</label>
+
+<!-- // background styles -->
+
+<!-- hide/show content -->
+
+<input id="hide-show-content" class="hide-show-content" type="checkbox">
+<label for="hide-show-content" class="layout-buttons settings-box-element">
+Hide/Show content
+</label>
+<!-- // hide/show content -->
+
+<!-- font   -->
+<input id="font-layout" class="font-layout" type="radio" name="layout">
+<label for="font-layout" class="layout-buttons settings-box-element">
+Font 15pt
+</label>
+<!-- font 12pt   -->
+<input id="font-12pt-layout" class="font-12pt-layout" type="radio" name="layout">
+<label for="font-12pt-layout" class="layout-buttons settings-box-element">
+Font 12pt
+</label>
+
+
+<!-- // settings box -->
+<div class="main-wrapper">
+  <div class="content">
+    <h1>A Style Switcher with Pure CSS!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+      quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+      Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+    </p>
+  </div>
+</div>
+
+
+    
+<div class="den-font-size" id="container" style="position:absolute; top:500px;">
 
   <p><a href="">
     RED
   </a></p>
-<!text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;>
+<!--text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;-->
   <p style="font-family:Audiowide;   font-size: 7em; color: #ffffff;  
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
   " > <a>
@@ -46,10 +115,6 @@
   </a></p>
 
 </div>
-
-<div id="linkBack" style="position:absolute;left:0px;top:0px;background-color:#333;margin:0;width:160px;padding:15px"><a href="http://bayguzin.ru/main/skriptyi/effektyi-s-tekstom/neon-effect.html" target="_blank" style="font-size:14px;text-decoration:none;color:#fff;padding:0 0 0 5px;font-family:sans-serif">Вернуться к статье</a></div>
     
 
-    
-</body>
 </html>
