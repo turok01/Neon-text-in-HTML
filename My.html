@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>[CSS3] Neon Glow</title>
     <link rel="stylesheet" href="css/my.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 	<style>
+	
+
 	@font-face {
 	  font-family: 'Audiowide';
 	  font-style: normal;
@@ -26,6 +30,9 @@ function setNeonTextSize(color) {
   document.getElementById('container').style.color = color;
   /*container.style.color = #222222;*/
 }
+function setNeonFont(font) {  
+  document.getElementById('container').style.setProperty('font-family',font);    
+}
 </script>
 <script>
 function setNeonTextColor(color) {
@@ -38,14 +45,17 @@ function setNeonTextShadow(shadow) {
 	sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
   document.getElementById('container').style.setProperty('text-shadow',sh);  
 }
-</script>
-<script>
-function report(period) {
-  if (period=="") return; // please select - possibly you want something else here
-	if (period==20) document.getElementById('container').style.setProperty('font-size','20px');  
-	if (period=="40") document.getElementById('container').style.setProperty('font-size','40px');  
+function setNeonFontSize(size) {
+  if (size=="") return; // please select - possibly you want something else here
+	else document.getElementById('container').style.setProperty('font-size',size + 'px');  
+	/*if (size==20) document.getElementById('container').style.setProperty('font-size','20px');  
+	if (size==40) document.getElementById('container').style.setProperty('font-size','40px');  */
   
 } 
+function updateText() {
+	str=document.getElementById('input_text').value; 
+	document.getElementById('show_text_id').innerHTML = str;  
+}
 </script>
 
 <input type="button" onclick="setNeonTextColor('white')" value="White!">
@@ -54,11 +64,27 @@ function report(period) {
 <input type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!">
 <input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
 <input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
-<select name="aa" onchange="report(this.value)"> 
-  <option value="">Please select</option>
-  <option value=20>daily</option>
-  <option value="40">monthly</option>
+<input type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:12pt; font-family:Roboto;">
+<input type="button" onclick="setNeonFont('Audiowide')" value="Audiowide" style="font-size:10pt; font-family:Audiowide;">
+<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">
+<input type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:10pt; font-family: 'Montserrat Alternates', sans-serif;">
+
+<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
+  <option value="">Размер шрифта</option>  
+  <option value=40>40</option>
+  <option value=50>50</option>
+  <option value=55>55</option>
+  <option value=60>60</option>
+  <option value=65>65</option>
+  <option value=70>70</option>  
+  <option value=75>75</option>
+  <option value=80>80</option>
+  <option value=100>100</option>
 </select>
+
+<textarea class="form-control" rows="2" id="input_text" style="margin-bottom: 0;font-size:1.1em;" placeholder="ENTER TEXT HERE 
+Press Enter/Return for a new line" oninput="updateText();"></textarea>
+
 <!--body style="background-color: #222222;-->
 
 <!-- settings box -->
@@ -140,11 +166,12 @@ roboto
 
   
 <!--text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;-->
+<div class="show_text" id="show_text_id">Ваш текст</div>
+
+</div>
   <p  >
   
     DENZVER
-  </p>
-</div>
-    
+  </p>    
 
 </html>
