@@ -11,9 +11,54 @@
 	  font-weight: 400;
 	  src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 	}
+	@font-face {
+	  font-family: 'Roboto';
+	  font-style: italic;
+	  font-weight: 400;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format('woff2');
+	  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+	}
 	</style>
   </head>
+<script>
+function setNeonTextSize(color) {  
+  document.getElementById('container').style.color = color;
+  /*container.style.color = #222222;*/
+}
+</script>
+<script>
+function setNeonTextColor(color) {
+  document.getElementById('container').style.color = color;  
+}
+</script>
+<script>
+function setNeonTextShadow(shadow) {
+	sh="0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900";
+	sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
+  document.getElementById('container').style.setProperty('text-shadow',sh);  
+}
+</script>
+<script>
+function report(period) {
+  if (period=="") return; // please select - possibly you want something else here
+	if (period==20) document.getElementById('container').style.setProperty('font-size','20px');  
+	if (period=="40") document.getElementById('container').style.setProperty('font-size','40px');  
+  
+} 
+</script>
 
+<input type="button" onclick="setNeonTextColor('white')" value="White!">
+<input type="button" onclick="setNeonTextColor('red')" value="Red!">
+<input type="button" onclick="setNeonTextColor('blue')" value="Blue!">
+<input type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!">
+<input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
+<input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
+<select name="aa" onchange="report(this.value)"> 
+  <option value="">Please select</option>
+  <option value=20>daily</option>
+  <option value="40">monthly</option>
+</select>
 <!--body style="background-color: #222222;-->
 
 <!-- settings box -->
@@ -71,6 +116,11 @@ Font 15pt
 <label for="font-12pt-layout" class="layout-buttons settings-box-element">
 Font 12pt
 </label>
+<!-- font roboto   -->
+<input id="font-roboto-layout" class="font-roboto-layout" type="radio" name="layout">
+<label for="font-roboto-layout" class="layout-buttons settings-box-element">
+roboto
+</label>
 
 
 <!-- // settings box -->
@@ -86,34 +136,14 @@ Font 12pt
 
 
     
-<div class="den-font-size" id="container" style="position:absolute; top:500px;">
+<div class="den-font-size" class="den-font" id="container" style="position:absolute; top:100px;">
 
-  <p><a href="">
-    RED
-  </a></p>
+  
 <!--text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;-->
-  <p style="font-family:Audiowide;   font-size: 7em; color: #ffffff;  
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
-  " > <a>
+  <p  >
+  
     DENZVER
-  </a></p>
-
-  <p><a href="">
-    Yellow
-  </a></p>
-
-  <p><a href="">
-    GREEN
-  </a></p>
-
-  <p><a href="">
-    ORANGE
-  </a></p>
-
-  <p><a href="">
-    VIOLET
-  </a></p>
-
+  </p>
 </div>
     
 
