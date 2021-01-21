@@ -37,6 +37,9 @@ h1 {
 .den-font-size{
   /*font-size: 30pt;*/
 }
+.den-font{
+  /*font-size: 30pt;*/
+}
 /*==========================================
     settings box
 ==========================================*/
@@ -82,7 +85,7 @@ input[type="radio"] {
 .layout-buttons {
   display: block;
   width: 150px;
-  padding: 10px 0;
+  padding: 0px 0;
   text-align: center;
   border: 2px solid black;
   box-sizing: border-box;
@@ -108,36 +111,42 @@ input[type="radio"]:checked + label {
 
 .dark-layout + label {
   position: fixed;
-  top: 185px;
+  top: 165px;
   right: -150px;
 }
 
 .image-layout + label {
   position: fixed;
-  top: 230px;
+  top: 190px;
   right: -150px;
 }
 
 .pattern-layout + label {
   position: fixed;
-  top: 275px;
+  top: 215px;
   right: -150px;
 }
 
 .font-layout + label {
   position: fixed;
-  top: 365px;
+  top: 240px;
   right: -150px;
 }
 .font-12pt-layout + label {
   position: fixed;
-  top: 410px;
+  top: 265px;
   right: -150px;
 }
 
 .hide-show-content + label {
   position: fixed;
-  top: 320px;
+  top: 290px;
+  right: -150px;
+}
+
+.font-roboto-layout + label {
+  position: fixed;
+  top: 315px;
   right: -150px;
 }
 
@@ -159,14 +168,24 @@ input[type="radio"]:checked + label {
   /*-- change the pattern from here --*/
 }
 
-.font-layout:checked ~ .den-font-size {
-  font-size:15pt;  
+.font-layout:checked ~ .den-font {
+  /*font-size:15pt;  */
+  color: #ff00ff;
 }
 
 .font-12pt-layout:checked ~ .den-font-size {
   font-size:12pt;  
+  font-family:Audiowide;    color: #ffffff;  
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
 }
 
 .hide-show-content:checked ~ .main-wrapper .content {
   display: none;
+}
+.font-roboto-layout:checked ~ .den-font-size {
+  font-family:Roboto;
+/*  font-size: 7em;*/
+  font-size: 3em;
+  color: #ffffff;  
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF50a0, 0 0 35px #FF50a0, 0 0 40px #FF50a0, 0 0 50px #FF50a0, 0 0 75px #FF50a0;
 }
