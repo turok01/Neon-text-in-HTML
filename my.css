@@ -3,12 +3,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  line-height: 1.4;
-  background: #909090;
-}
+
 
 .main-wrapper {
   height: 100%;
