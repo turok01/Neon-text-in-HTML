@@ -9,7 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
 	<style>
 	@font-face{
-	font-family: 'Iceland', cursive;
+	font-family: 'Iceland', cursive;	
 	}	
 
 	@font-face {
@@ -26,144 +26,147 @@
 	  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format('woff2');
 	  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 	}
+	.left_half, .den-font-size, .color_buttons, .font_buttons, .fontsize_selector, .window_input_text { position:absolute; }
+	.font_buttons { overflow: auto; padding: 10px};
+	.den-font-size { 
+		width: 700px;
+		
+		top: 50px;  /* Расстояние от верхнего края */ 
+		text-align: center;
+	}
+	
+	.show_text{
+		width:700px;
+		text-align:center;
+	}
+	
+	.window_input_text{
+		top: 20px;
+		height: 180px;
+		width: 500px;
+		left: 750px;		
+		align: left;
+		
+		
+	}
+	
+	.font_buttons{
+		top: 200px;
+		height: 480px;
+		width: 500px;
+		left: 750px;		
+		align: left;
+		
+	}
+	
+	.color_buttons{		
+		top: 760px;
+		height: 200px;
+		width: 500px;		
+		left: 750px;		
+		align: left;		
+	}
+	
+	.fontsize_selector{
+		top: 680px;
+		height: 80px;
+		width: 500px;		
+		left: 750px;		
+		align: left;	
+	}
+	
+	.one_font_btn{
+		width:115px;
+		background-color: #FFFFFF;
+		border: 0px;
+		/*border: 1px solid green;*/
+	}
+	
+	
+	
 	</style>
-  </head>
-<script>
-function setNeonTextSize(color) {  
-  document.getElementById('container').style.color = color;
-  /*container.style.color = #222222;*/
-}
-function setNeonFont(font) {  
-  document.getElementById('container').style.setProperty('font-family',font);    
-}
+ 
+	<script>
+	function setNeonTextSize(color) {  
+	  document.getElementById('container').style.color = color;
+	  /*container.style.color = #222222;*/
+	}
+	function setNeonFont(font) {  
+	  document.getElementById('container').style.setProperty('font-family',font);    
+	}
 
-function setNeonTextColor(color) {
-  document.getElementById('container').style.color = color;  
-}
+	function setNeonTextColor(color) {
+	  document.getElementById('container').style.color = color;  
+	}
 
-function setNeonTextShadow(shadow) {
-	sh="0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900";
-	sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
-  document.getElementById('container').style.setProperty('text-shadow',sh);  
-}
+	function setNeonTextShadow(shadow) {
+		sh="0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900";
+		sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
+	  document.getElementById('container').style.setProperty('text-shadow',sh);  
+	}
 
-function setNeonFontSize(size) {
-  if (size=="") return; 
-	else document.getElementById('container').style.setProperty('font-size',size + 'px');  	
-  
-} 
+	function setNeonFontSize(size) {
+	  if (size=="") return; 
+		else document.getElementById('container').style.setProperty('font-size',size + 'px');  	
+	  
+	} 
 
-function updateText() {
-	str=document.getElementById('input_text').value; 
-	document.getElementById('show_text_id').innerHTML = str;  
-}
-</script>
-
-<input type="button" onclick="setNeonTextColor('white')" value="White!">
-<input type="button" onclick="setNeonTextColor('red')" value="Red!">
-<input type="button" onclick="setNeonTextColor('blue')" value="Blue!">
-<input type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!">
-<input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
-<input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
-<input type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:12pt; font-family:Roboto;">
-<input type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
-<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
-<input type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:10pt; font-family: 'Montserrat Alternates', sans-serif;">
-<input type="button" onclick="setNeonFont('Iceland')" value="Iceland(EN)" style="font-size:12pt; font-family:Iceland;">
-
-
-<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
-  <option value="">Размер шрифта</option>  
-  <option value=40>40</option>
-  <option value=50>50</option>
-  <option value=55>55</option>
-  <option value=60>60</option>
-  <option value=65>65</option>
-  <option value=70>70</option>  
-  <option value=75>75</option>
-  <option value=80>80</option>
-  <option value=100>100</option>
-</select>
-
-<textarea class="form-control" rows="2" id="input_text" style="margin-bottom: 0;font-size:1.1em;" placeholder="ENTER TEXT HERE 
-Press Enter/Return for a new line" oninput="updateText();"></textarea>
-
-<!--body style="background-color: #222222;-->
-
-<!-- settings box -->
-
-<!-- the gear icon that opens the box when you click on it -->
-<input id="settings-btn" type="checkbox" class="settings-btn">
-<label for="settings-btn" class="settings-box-element"><i class="fa fa-2x fa-gear">butt</i></label>
-
-<!-- the white box that contains the buttons -->
-<div class="buttons-wrapper settings-box-element"></div>
-
-<!-- background styles -->
-
-<!-- light background (#eaeaea) -->
-<input id="light-layout" class="light-layout" type="radio" name="layout" checked>
-<label for="light-layout" class="layout-buttons settings-box-element">
-Light Background
-</label>
-
-<!-- dark background (#494949) -->
-<input id="dark-layout" class="dark-layout" type="radio" name="layout">
-<label for="dark-layout" class="layout-buttons settings-box-element">
-Dark Background
-</label>
-
-<!-- image background (you can use any image of your choice) -->
-<input id="image-layout" class="image-layout" type="radio" name="layout">
-<label for="image-layout" class="layout-buttons settings-box-element">
-Image Background
-</label>
-
-<!-- pattern background (you can use any pattern of your choice) -->
-<input id="pattern-layout" class="pattern-layout" type="radio" name="layout">
-<label for="pattern-layout" class="layout-buttons settings-box-element">
-Pattern Background
-</label>
-
-<!-- // background styles -->
-
-<!-- hide/show content -->
-
-<input id="hide-show-content" class="hide-show-content" type="checkbox">
-<label for="hide-show-content" class="layout-buttons settings-box-element">
-Hide/Show content
-</label>
-<!-- // hide/show content -->
-
-<!-- font   -->
-<input id="font-layout" class="font-layout" type="radio" name="layout">
-<label for="font-layout" class="layout-buttons settings-box-element">
-Font 15pt
-</label>
-<!-- font 12pt   -->
-<input id="font-12pt-layout" class="font-12pt-layout" type="radio" name="layout">
-<label for="font-12pt-layout" class="layout-buttons settings-box-element">
-Font 12pt
-</label>
-<!-- font roboto   -->
-<input id="font-roboto-layout" class="font-roboto-layout" type="radio" name="layout">
-<label for="font-roboto-layout" class="layout-buttons settings-box-element">
-roboto
-</label>
-
-<!-- // settings box -->
-<div class="main-wrapper">
-  <div class="content">
-    <h1>A Style Switcher with Pure CSS!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-      quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-      Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-    </p>
-  </div>
+	function updateText() {
+		str=document.getElementById('input_text').value; 
+		document.getElementById('show_text_id').innerHTML = str.replace(/\n/g,'<br>');  
+	}
+	</script>
+ </head>
+<body>
+<div class="left_half" style="top: 0px;
+		height: 900px;
+		width: 750px;		
+		left: 0px; background-color:grey;"></div>
+<div class="window_input_text">Ваш текст:<br>
+	<textarea class="form-control" rows="3" id="input_text"  style="width: 400px; margin-bottom: 0;font-size:1.1em; text-align: center; resize:none;"  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ
+Нажмите Enter для новой строки" oninput="updateText();"></textarea>
 </div>
-    
-<div class="den-font-size" class="den-font" id="container" style="position:absolute; top:100px; font-family:Audiowide; font-size:100px; color:white; 
+
+<div class="color_buttons" >
+	<input type="button" onclick="setNeonTextColor('white')" value="White!">
+	<input type="button" onclick="setNeonTextColor('red')" value="Red!">
+	<input type="button" onclick="setNeonTextColor('blue')" value="Blue!">
+	<input type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!">
+	<input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
+	<input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
+</div>
+
+<div class="font_buttons" style="text-align:center; font-family:'Roboto'; font-size:18px;">ВЫБЕРИТЕ ШРИФТ<br><br>
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:14pt; font-family:Roboto; ">	
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
+	<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:12pt; font-family: 'Montserrat Alternates', sans-serif; ">	
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Iceland')" value="Iceland(EN)" style="font-size:14pt; font-family:Iceland; ">
+</div>
+
+<div class="fontsize_selector">Выберите размер надписи:<br>
+	<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
+	  <option value="">-выберите-</option>  
+	  
+	  <option value=50>50</option>
+	  <option value=55>55</option>
+	  <option value=60>60</option>
+	  <option value=65>65</option>
+	  <option value=70>70</option>  
+	  <option value=75>75</option>
+	  <option value=80>80</option>
+	  <option value=90>90</option>
+	  <option value=100>100</option>
+	  <option value=110>110</option>
+	</select>
+</div>
+
+<div class="den-font-size" class="den-font" id="container" style="font-family:Audiowide; font-size:100px; color:white; 
 	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;">  
-	<div class="show_text" id="show_text_id">Your text</div>
-</div>  
+	<div class="show_text" id="show_text_id">Your
+	text	
+	</div>
+</div>      
+
+</body>
 </html>
