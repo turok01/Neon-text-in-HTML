@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="css/my.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
 	<style>
-	
+	@font-face{
+	font-family: 'Iceland', cursive;
+	}	
 
 	@font-face {
 	  font-family: 'Audiowide';
@@ -33,25 +36,23 @@ function setNeonTextSize(color) {
 function setNeonFont(font) {  
   document.getElementById('container').style.setProperty('font-family',font);    
 }
-</script>
-<script>
+
 function setNeonTextColor(color) {
   document.getElementById('container').style.color = color;  
 }
-</script>
-<script>
+
 function setNeonTextShadow(shadow) {
 	sh="0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900";
 	sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
   document.getElementById('container').style.setProperty('text-shadow',sh);  
 }
+
 function setNeonFontSize(size) {
-  if (size=="") return; // please select - possibly you want something else here
-	else document.getElementById('container').style.setProperty('font-size',size + 'px');  
-	/*if (size==20) document.getElementById('container').style.setProperty('font-size','20px');  
-	if (size==40) document.getElementById('container').style.setProperty('font-size','40px');  */
+  if (size=="") return; 
+	else document.getElementById('container').style.setProperty('font-size',size + 'px');  	
   
 } 
+
 function updateText() {
 	str=document.getElementById('input_text').value; 
 	document.getElementById('show_text_id').innerHTML = str;  
@@ -65,9 +66,11 @@ function updateText() {
 <input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
 <input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
 <input type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:12pt; font-family:Roboto;">
-<input type="button" onclick="setNeonFont('Audiowide')" value="Audiowide" style="font-size:10pt; font-family:Audiowide;">
-<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">
+<input type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
+<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
 <input type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:10pt; font-family: 'Montserrat Alternates', sans-serif;">
+<input type="button" onclick="setNeonFont('Iceland')" value="Iceland(EN)" style="font-size:12pt; font-family:Iceland;">
+
 
 <select name="fontSize" onchange="setNeonFontSize(this.value)"> 
   <option value="">Размер шрифта</option>  
@@ -148,7 +151,6 @@ Font 12pt
 roboto
 </label>
 
-
 <!-- // settings box -->
 <div class="main-wrapper">
   <div class="content">
@@ -159,19 +161,9 @@ roboto
     </p>
   </div>
 </div>
-
-
     
-<div class="den-font-size" class="den-font" id="container" style="position:absolute; top:100px;">
-
-  
-<!--text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;-->
-<div class="show_text" id="show_text_id">Ваш текст</div>
-
-</div>
-  <p  >
-  
-    DENZVER
-  </p>    
-
+<div class="den-font-size" class="den-font" id="container" style="position:absolute; top:100px; font-family:Audiowide; font-size:100px; color:white; 
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;">  
+	<div class="show_text" id="show_text_id">Your text</div>
+</div>  
 </html>
