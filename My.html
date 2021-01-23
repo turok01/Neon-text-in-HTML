@@ -26,7 +26,17 @@
 	  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format('woff2');
 	  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 	}
-	.left_half, .den-font-size, .color_buttons, .font_buttons, .fontsize_selector, .window_input_text { position:absolute; }
+	.right_half, .left_half, .den-font-size, .color_buttons, .font_buttons, .fontsize_selector, .window_input_text { position:absolute; }
+	
+	.right_half{		
+		left:750px;
+		top:10px;
+		width:500px;
+		height:960px;
+		background-color: #f5f5f5;
+		z-index:-1;
+		
+	}
 	.font_buttons { overflow: auto; padding: 10px};
 	.den-font-size { 
 		width: 700px;
@@ -44,17 +54,19 @@
 		top: 20px;
 		height: 180px;
 		width: 500px;
-		left: 750px;		
-		align: left;
-		
-		
+		left: 0px;		
+		align: left;		
+	}
+	.input_textarea{
+		border-radius:5px;
+		background:#f5f5f5;
 	}
 	
 	.font_buttons{
 		top: 200px;
 		height: 480px;
 		width: 500px;
-		left: 750px;		
+		left: 0px;		
 		align: left;
 		
 	}
@@ -63,7 +75,7 @@
 		top: 760px;
 		height: 200px;
 		width: 500px;		
-		left: 750px;		
+		left: 0px;		
 		align: left;		
 	}
 	
@@ -71,15 +83,18 @@
 		top: 680px;
 		height: 80px;
 		width: 500px;		
-		left: 750px;		
+		left: 0px;		
 		align: left;	
 	}
 	
 	.one_font_btn{
 		width:115px;
+		height:24px;
 		background-color: #FFFFFF;
 		border: 0px;
-		/*border: 1px solid green;*/
+		vertical-align:top;
+		margin-top:5px;
+		/*border: 1px solid grey;*/
 	}
 	
 	
@@ -122,11 +137,12 @@
 		height: 900px;
 		width: 750px;		
 		left: 0px; background-color:grey;"></div>
+
+<div class="right_half">
 <div class="window_input_text">Ваш текст:<br>
-	<textarea class="form-control" rows="3" id="input_text"  style="width: 400px; margin-bottom: 0;font-size:1.1em; text-align: center; resize:none;"  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ
+	<textarea class="input_textarea" rows="3" id="input_text"  style="width: 400px; margin-bottom: 0;font-size:1.1em; text-align: center; resize:none;"  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ
 Нажмите Enter для новой строки" oninput="updateText();"></textarea>
 </div>
-
 <div class="color_buttons" >
 	<input type="button" onclick="setNeonTextColor('white')" value="White!">
 	<input type="button" onclick="setNeonTextColor('red')" value="Red!">
@@ -137,6 +153,11 @@
 </div>
 
 <div class="font_buttons" style="text-align:center; font-family:'Roboto'; font-size:18px;">ВЫБЕРИТЕ ШРИФТ<br><br>
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:14pt; font-family:Roboto; ">	
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
+	<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:12pt; font-family: 'Montserrat Alternates', sans-serif; ">	
+	<input class="one_font_btn" type="button" onclick="setNeonFont('Iceland')" value="Iceland(EN)" style="font-size:14pt; font-family:Iceland; ">
 	<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:14pt; font-family:Roboto; ">	
 	<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
 	<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
@@ -159,6 +180,7 @@
 	  <option value=100>100</option>
 	  <option value=110>110</option>
 	</select>
+</div>
 </div>
 
 <div class="den-font-size" class="den-font" id="container" style="font-family:Audiowide; font-size:100px; color:white; 
