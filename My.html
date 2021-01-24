@@ -27,39 +27,68 @@
 	  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 	}
 	.right_half, .left_half, .den-font-size, .color_buttons, .font_buttons, .fontsize_selector, .window_input_text { position:absolute; }
-	
-	.right_half{		
-		left:750px;
-		top:10px;
-		width:500px;
-		height:960px;
-		background-color: #f5f5f5;
-		z-index:-1;
-		
-	}
-	.font_buttons { overflow: auto; padding: 10px};
-	.den-font-size { 
-		width: 700px;
-		
-		top: 50px;  /* Расстояние от верхнего края */ 
-		text-align: center;
-	}
+	.input_textarea {}
 	
 	.show_text{
 		width:700px;
 		text-align:center;
 	}
+	.den-font-size { 
+		width: 700px;		
+		top: 50px;  /* Расстояние от верхнего края */ 
+		text-align: center;
+	}	
+	
+	.right_half{		
+		left:770px;
+		top:10px;
+		width:500px;
+		height:960px;
+		background-color: #ffffff;/* #f5f5f5*/
+		z-index:-1;
+		box-shadow:0px 6px 23px -2px rgba(0,0,0,0.27);
+		
+	}
+	.right_header{
+		top:0px;
+		width:500px;
+		height:80px;		
+		text-align:center;
+		font-family:Montserrat Alternates;		
+		font-size:28px;
+		padding:5px;
+		
+	}
+	.font_buttons { overflow: auto; padding: 10px};
+	
 	
 	.window_input_text{
-		top: 20px;
-		height: 180px;
+		display: inline-block; 		
+		left: 50px;
+		height: 100px;
 		width: 500px;
-		left: 0px;		
-		align: left;		
+		padding:10px;
+		
+		
 	}
+	.label_input_textarea{
+		position:relative;
+		top: 10px;
+		left:20px;
+		
+	}
+	
 	.input_textarea{
+		position:relative;		
+		top:10px;
+		left:20px;
 		border-radius:5px;
 		background:#f5f5f5;
+		margin: 0 auto;
+		width: 460px; 
+		font-size:1.1em;
+		text-align: center;
+		resize:none;		
 	}
 	
 	.font_buttons{
@@ -67,8 +96,7 @@
 		height: 480px;
 		width: 500px;
 		left: 0px;		
-		align: left;
-		
+		align: left;		
 	}
 	
 	.color_buttons{		
@@ -96,7 +124,10 @@
 		margin-top:5px;
 		/*border: 1px solid grey;*/
 	}
-	
+	.one_color_button{
+		border-radius:10px;
+		
+	}
 	
 	
 	</style>
@@ -139,20 +170,24 @@
 		left: 0px; background-color:grey;"></div>
 
 <div class="right_half">
-<div class="window_input_text">Ваш текст:<br>
-	<textarea class="input_textarea" rows="3" id="input_text"  style="width: 400px; margin-bottom: 0;font-size:1.1em; text-align: center; resize:none;"  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ
+<div class="right_header">Реализуй свои идеи
+	<div style="padding:5px; font-family:Verdana; font-size:16px;">Используйте необычную светящуюся надпись для реализации самых смелых идей</div>
+</div>
+<div class="window_input_text">
+	<div class="label_input_textarea" style="font-family:Verdana; font-size:16px;">Ваш текст:</div>
+	<textarea class="input_textarea" rows="3" id="input_text"  style=""  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ
 Нажмите Enter для новой строки" oninput="updateText();"></textarea>
 </div>
 <div class="color_buttons" >
-	<input type="button" onclick="setNeonTextColor('white')" value="White!">
-	<input type="button" onclick="setNeonTextColor('red')" value="Red!">
-	<input type="button" onclick="setNeonTextColor('blue')" value="Blue!">
-	<input type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!">
-	<input type="button" onclick="setNeonTextShadow('red')" value="Red Shadow!">
-	<input type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
+	<input class="one_color_button" type="button" onclick="setNeonTextColor('white')" value="White!">
+	<input class="one_color_button" type="button" onclick="setNeonTextColor('red')" value="Red!">
+	<input class="one_color_button" type="button" onclick="setNeonTextColor('blue')" value="Blue!">
+	<input class="one_color_button" type="button" onclick="setNeonTextShadow('blue')" value="Blue Shadow!" style="background-color:blue;">
+	<input class="one_color_button" type="button" onclick="setNeonTextShadow('red')" value=" " style="background-color:#D03030;">
+	<input class="one_color_button" type="button" onclick="setNeonTextShadow('#222222')" value="#222222; Shadow!">
 </div>
 
-<div class="font_buttons" style="text-align:center; font-family:'Roboto'; font-size:18px;">ВЫБЕРИТЕ ШРИФТ<br><br>
+<div class="font_buttons" style="text-align:center; font-family:Verdana;  font-size:16px;">ВЫБЕРИТЕ ШРИФТ:<br><br>
 	<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:14pt; font-family:Roboto; ">	
 	<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">
 	<!--<input type="button" onclick="setNeonFont('Gardens CM')" value="Gardens CM" style="font-size:10pt; font-family:Gardens CM;">-->
