@@ -4,12 +4,88 @@
     <meta charset="UTF-8">
     <title>Denzver Neon</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2??family=Audiowide&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Commissioner&family=Orbitron&family=Syncopate&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Shadows+Into+Light&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&family=Orbitron:wght@500&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Megrim&family=Nova+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet">
+	
+
 	<style>
 	@font-face{
-	font-family: 'Iceland', cursive;	
+		font-family: 'Sacramento', cursive;
+	}	
+	
+
+
+
+
+@font-face {
+    font-family: 'Bluelmin Sandsfort';
+    src: url('BluelminSandsfort.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Crumble';
+    src: url('Crumble.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bayshore';
+    src: url('Bayshore.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'April Flowers';
+    src: url('AprilFlowers.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Freestyle Script';
+    src: url('FreestyleScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Signature';
+    src: url('SignatureRegular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AniLazyDay';
+    src: url('AniLazyDay.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+	
+	
+	@font-face{
+		font-family: 'Iceland', cursive;	
 	}	
 	@font-face{
 		font-family: 'Oswald';
@@ -22,14 +98,7 @@
 	  font-weight: 400;
 	  src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 	}
-	@font-face {
-	  font-family: 'Roboto';
-	  font-style: italic;
-	  font-weight: 400;
-	  font-display: swap;
-	  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format('woff2');
-	  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-	}
+	
 	
 	.right_half, .left_half, .den-font-size, .color_buttons, .font_buttons, .fontsize_selector, .window_input_text { position:absolute; }
 	.input_textarea {}
@@ -148,7 +217,8 @@
 	}
 	
 	.one_font_btn{
-		width:115px;
+		/*width:115px;*/
+		width:140px;
 		height:26px;
 		background-color: #FFFFFF;
 		border: 0px;
@@ -274,11 +344,25 @@
 	</div>
 
 	<div class="font_buttons" style="text-align:center; font-family:Verdana;  font-size:16px;">ВЫБЕРИТЕ ШРИФТ:<br><br>
-		<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:14pt; font-family:Roboto; ">	
-		<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide(EN)" style="font-size:10pt; font-family:Audiowide;">	
-		<input class="one_font_btn" type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat" style="font-size:12pt; font-family: 'Montserrat Alternates', sans-serif; ">	
-		<input class="one_font_btn" type="button" onclick="setNeonFont('Iceland')" value="Iceland(EN)" style="font-size:14pt; font-family:Iceland; ">	
-		<input class="one_font_btn" type="button" onclick="setNeonFont('Oswald',200)" value="Oswald" style="font-family: 'Oswald'; font-size:12pt;">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:12pt; font-family:Roboto; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide" style="font-size:10pt; font-family:Audiowide;">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat(RU)" style="font-size:12pt; font-family: 'Montserrat Alternates', sans-serif; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Iceland')" value="Iceland" style="font-size:14pt; font-family:Iceland; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Oswald',200)" value="Oswald(RU)" style="font-family: 'Oswald'; font-size:12pt;">			
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Angelina')" value="Angelina" style="font-family: 'Angelina'; font-size:12pt;">		
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Sacramento')" value="Sacramento" style="font-family: 'Sacramento'; font-size:16pt;">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Caveat')" value="Caveat" style="font-family: 'Caveat'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Orbitron')" value="Orbitron" style="font-family: 'Orbitron'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Commissioner')" value="Commissioner(RU)" style="font-family: 'Commissioner'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Shadows Into Light')" value="Shadows Into Light" style="font-family: 'Shadows Into Light'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Syncopate')" value="Syncopate" style="font-family: 'Syncopate'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Bad Script')" value="Bad Script(RU)" style="font-family: 'Bad Script'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Julius Sans One')" value="Julius Sans" style="font-family: 'Julius Sans One'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Megrim')" value="Megrim" style="font-family: 'Megrim'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Nova Mono')" value="Nova Mono" style="font-family: 'Nova Mono'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Bellota')" value="Bellota(RU)" style="font-family: 'Bellota'; font-size:12pt;">
+		
+		
 	</div>
 
 	<div class="fontsize_selector">Выберите размер надписи:<br>
