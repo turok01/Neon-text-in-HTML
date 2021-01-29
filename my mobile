@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Denzver Neon</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2??family=Audiowide&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Commissioner&family=Orbitron&family=Syncopate&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Shadows+Into+Light&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&family=Orbitron:wght@500&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Megrim&family=Nova+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet">
+	
+
+	<style>
+	@font-face{
+		font-family: 'Sacramento', cursive;
+	}	
+	@font-face{
+		font-family: 'Iceland', cursive;	
+	}	
+	@font-face{
+		font-family: 'Oswald';
+		font-weight: 200;
+		
+	}
+	@font-face {
+	  font-family: 'Audiowide';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+	}	
+	.body{
+		
+		
+		
+	}
+	
+	.top_half  {position:absolute;						width:100%;}
+	.top_header{position:relative;						width:100%;}
+	.text_font_selector{}	
+	.window_input_text { position:absolute; top: 20%;}
+	.label_input_textarea{position:relative;top: 10px;									left:20px;}	
+	.input_textarea { position:relative;	top: 10px;	width: 460px; 					left:20px;}
+	.font_buttons {position:absolute;		top: 10%;}
+	
+	.fontsize_selector  { position:absolute;top: 480px;	width: 250px;	height: 80px;	left: 0px;}	
+	.color_selector{ position:absolute;		top: 480px;	width: 250px;	height: 80px;	left: 250px; }
+	
+	.bottom_half{position:absolute;			top: 36%;	width: 100%;	height: 64%;}	
+	.den-font-size {position:absolute;		top: 30%;	width: 100%;	}
+	
+	
+	.bottom_half{
+		max-width: 900px;		
+		background-color:grey;
+		border-radius:10px;	
+		object-fit: cover;		
+	}
+	
+	.show_text{		
+		text-align:center;
+	}
+	.den-font-size {	 
+		text-align: center;
+	}	
+	
+	.top_half{					
+		max-width: 900px;			
+		background-color: #ffffff;/* #f5f5f5*/
+		z-index:-1;
+		box-shadow:0px 6px 23px -2px rgba(0,0,0,0.27);
+		border-radius:10px;		
+	}
+	.top_header{				
+		text-align:center;		
+		padding:5px;		
+	    font-family: 'Roboto',Arial,sans-serif;
+        font-weight: 600;
+        color: #000;
+        font-size:28px;		
+	}	
+	.window_input_text{
+		display: block;		
+		padding:1%;		
+	}	
+	.input_textarea{		
+		border-radius:5px;
+		background:#f5f5f5;
+		margin: 0 auto;		
+		font-size:1.1em;
+		text-align: center;
+		resize:none;		
+	}
+	
+	.font_buttons { overflow: auto; padding: 10px};
+	.font_buttons{
+		display: none;	
+		align: left;	
+		visibility: hidden;
+	}	
+	.color_selector{				
+		align: left;
+		font-family:Verdana;
+		padding:10px;
+	}	
+	.fontsize_selector{				
+		align: left;	
+		font-family:Verdana;
+		padding:10px;
+	}
+	
+	.one_font_btn{		
+		width:140px;
+		height:26px;
+		background-color: #FFFFFF;
+		border: 0px;
+		vertical-align:top;
+		margin: auto;
+		margin-top:5px;
+		/*border: 1px solid grey;*/
+		text-align:center;
+		align-items: center;
+		justify-content: center;
+		padding: 0px;
+	}
+	.one_color_button{
+		border-radius:10px;
+		
+	}
+	.one_interior_image_button{
+		border-radius:10px;
+		
+	}
+	.thumbnail {
+		border: 1px solid #ddd; /* Gray border */
+		border-radius: 3px;  /* Rounded border */
+		padding: 4px; /* Some padding */
+		width: 100px; /* Set a small width */
+		height:70px;
+		object-fit: cover;
+	}
+
+	.thumbnail:hover {
+		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);		
+	}	
+	</style>
+ 
+	<script>
+	function setNeonTextSize(color) {  
+	  document.getElementById('den_font_container').style.color = color;
+	  /*den_font_container.style.color = #222222;*/
+	}
+	function setNeonFont(font) {  
+	  document.getElementById('den_font_container').style.setProperty('font-family',font);    
+	}
+	function setNeonFont(font,weight) {  
+	  document.getElementById('den_font_container').style.setProperty('font-family',font);    
+	  document.getElementById('den_font_container').style.setProperty('font-weight',weight);    
+	}
+
+	function setNeonTextColor(color) {
+	  document.getElementById('den_font_container').style.color = color;  
+	}
+
+	function setNeonTextShadow(shadow) {
+		if(shadow=='') return;
+		sh="0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900";
+		sh=sh.replace(new RegExp("#FF9900",'g'),shadow);
+	  document.getElementById('den_font_container').style.setProperty('text-shadow',sh);  
+	}
+
+	function setNeonFontSize(size) {
+	  if (size=="") return; 
+		else document.getElementById('den_font_container').style.setProperty('font-size',size + 'px');  	
+	  
+	} 
+
+	function updateText() {
+		str=document.getElementById('input_text').value; 
+		document.getElementById('show_text_id').innerHTML = str.replace(/\n/g,'<br>');  
+	}
+	function setInteriorImg(direction) {	
+		if(direction==1){
+			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg";  
+			/*document.getElementById('den_font_container').style.setProperty('top','300px');*/
+		}
+		if(direction==2){
+			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg";  
+			
+		}
+		if(direction==3){
+			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg";
+			
+		}
+		if(direction==4){
+			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg";  
+			 
+		}
+	}
+	function showBlcok(block){		
+		document.getElementsByClassName(block)[0].style.display = "block";
+	}
+	function hideBlcok(block){		
+		document.getElementsByClassName(block)[0].style.display = "none";
+	}
+	function showHideBlock(show_block,hide_block){
+		if (hide_block!="") hideBlcok(hide_block);
+		if (show_block!="") showBlcok(show_block);		
+	}
+	
+	</script>
+ </head>
+<body>
+
+
+<div class="top_half">
+
+	<div class="top_header">Реализуй свои идеи
+		<div style="padding:5px;  font-size:16px;font-family: 'Roboto',Arial,sans-serif; font-weight: 400;">Используйте необычную светящуюся надпись для реализации самых смелых идей</div>
+	</div>
+	<div class="text_font_selector" >
+		<input class="text_font_selector_btn" type="button" onclick="showHideBlock('window_input_text','font_buttons')" value="Текст" style="font-size:12pt; font-family:Roboto; ">	
+		<input class="text_font_selector_btn" type="button" onclick="showHideBlock('font_buttons','window_input_text')" value="Шрифт" style="font-size:12pt; font-family:Roboto; ">	
+	</div>
+	
+	<div class="window_input_text" >
+		<div class="label_input_textarea" style="font-family:Verdana; font-size:16px;">Ваш текст:</div>
+		<textarea class="input_textarea" rows="3" id="input_text"  style=""  placeholder="ВВЕДИТЕ ТЕКСТ ЗДЕСЬ&#10Нажмите Enter для новой строки" oninput="updateText();"></textarea>
+	</div>
+
+	<div class="font_buttons"  style="text-align:center; font-family:Verdana;  font-size:16px;">ВЫБЕРИТЕ ШРИФТ:<br><br>
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Roboto')" value="Roboto" style="font-size:12pt; font-family:Roboto; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Audiowide')" value="Audiowide" style="font-size:10pt; font-family:Audiowide;">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Montserrat Alternates')" value="Montserrat(RU)" style="font-size:12pt; font-family: 'Montserrat Alternates', sans-serif; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Iceland')" value="Iceland" style="font-size:14pt; font-family:Iceland; ">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Oswald',200)" value="Oswald(RU)" style="font-family: 'Oswald'; font-size:12pt;">			
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Angelina')" value="Angelina" style="font-family: 'Angelina'; font-size:12pt;">		
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Sacramento')" value="Sacramento" style="font-family: 'Sacramento'; font-size:16pt;">	
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Caveat')" value="Caveat" style="font-family: 'Caveat'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Orbitron')" value="Orbitron" style="font-family: 'Orbitron'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Commissioner')" value="Commissioner(RU)" style="font-family: 'Commissioner'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Shadows Into Light')" value="Shadows Into Light" style="font-family: 'Shadows Into Light'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Syncopate')" value="Syncopate" style="font-family: 'Syncopate'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Bad Script')" value="Bad Script(RU)" style="font-family: 'Bad Script'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Julius Sans One')" value="Julius Sans" style="font-family: 'Julius Sans One'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Megrim')" value="Megrim" style="font-family: 'Megrim'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Nova Mono')" value="Nova Mono" style="font-family: 'Nova Mono'; font-size:12pt;">
+		<input class="one_font_btn" type="button" onclick="setNeonFont('Bellota')" value="Bellota(RU)" style="font-family: 'Bellota'; font-size:12pt;">
+		
+		
+	</div>
+
+	<div class="fontsize_selector">Выберите размер надписи:<br>
+		<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
+		  <option value="">-выберите-</option>  
+		  
+		  <option value=50>50</option>
+		  <option value=55>55</option>
+		  <option value=60>60</option>
+		  <option value=65>65</option>
+		  <option value=70>70</option>  
+		  <option value=75>75</option>
+		  <option value=80>80</option>
+		  <option value=90>90</option>
+		  <option value=100>100</option>
+		  <option value=110>110</option>
+		</select>
+	</div>
+
+	<div class="color_selector">Выберите цвет надписи:<br>
+		<select name="fontColor" onchange="setNeonTextShadow(this.value)"> 
+		  <option value=''>-цвет-</option>  		  
+		  <option value='white'>Белый</option>
+		  <option value='yellow'>Желтый</option>
+		  <option value='orange'>Оранжевый</option>
+		  <option value='red'>Красный</option>
+		  <option value='#00BFFF'>Голубой</option>
+		  <option value='blue'>Синий</option>
+		  <option value='#adfc88'>Светлый ярко-зеленый</option>
+		  <option value='green'>Зеленый</option>		  
+		</select>
+	</div>
+	
+</div>
+<div class="bottom_half">
+
+	<img class="interior_image" id="interior_image_id" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style="object-fit: cover; width: 100%;  height: 100%;">
+	
+	<div class="den-font-size" id="den_font_container" style="font-family:Audiowide; font-size:100px; color:white; 
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;">  
+		<div class="show_text" id="show_text_id">Your
+		text	
+		</div>
+	</div>
+	
+	<div>
+		<a href="#" class="" onclick="setInteriorImg(1)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style=""></a>
+		<a href="#" class="" onclick="setInteriorImg(2)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg" style=""></a>
+		<a href="#" class="" onclick="setInteriorImg(3)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg" style=""></a>
+		<a href="#" class="" onclick="setInteriorImg(4)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg" style=""></a>		
+	</div>
+	
+	Interior designed by
+	<a href='https://www.freepik.com' style="color:#000000; text-decoration: none; color:blue"> Freepik</a>	
+	
+</div>
+      
+
+</body>
+</html>
