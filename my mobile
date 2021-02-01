@@ -40,16 +40,16 @@
 		
 	}
 	
-	.top_half  {position:absolute;						width:100%;}
-	.top_header{position:relative;						width:100%;}
-	.text_font_selector{}	
-	.window_input_text { position:absolute; top: 20%;}
-	.label_input_textarea{position:relative;top: 10px;									left:20px;}	
-	.input_textarea { position:relative;	top: 10px;	width: 460px; 					left:20px;}
-	.font_buttons {position:absolute;		top: 10%;}
+	.top_half  {position:absolute;						width:100%;	height: 36%;}
+	.top_header{position:absolute;						width:100%;}
+	.text_font_selector{position:absolute; 	top:20%;}	
+	.window_input_text { position:absolute; top: 40%;}
+	.label_input_textarea{position:absolute top: 50%;									left:20px;}	
+	.input_textarea { position:absolute;				width: 100%; 					left:20px;}
+	.font_buttons {position:absolute;		top: 140%;}
 	
-	.fontsize_selector  { position:absolute;top: 480px;	width: 250px;	height: 80px;	left: 0px;}	
-	.color_selector{ position:absolute;		top: 480px;	width: 250px;	height: 80px;	left: 250px; }
+	.fontsize_selector  { position:absolute;top: 90%;	width: 30%;	height: 10%;	left: 0px;}	
+	.color_selector{ position:absolute;		top: 90%;	width: 30%;	height: 10%;	left: 50%; }
 	
 	.bottom_half{position:absolute;			top: 36%;	width: 100%;	height: 64%;}	
 	.den-font-size {position:absolute;		top: 30%;	width: 100%;	}
@@ -97,8 +97,10 @@
 		resize:none;		
 	}
 	
-	.font_buttons { overflow: auto; padding: 10px};
+	.font_buttons { }
 	.font_buttons{
+		overflow: auto;
+		padding: 10px;
 		display: none;	
 		align: left;	
 		visibility: hidden;
