@@ -66,7 +66,10 @@
 		background-color:grey;
 		/*border-radius:10px;	*/
 		object-fit: cover;		
-	}	
+	}
+	.interior_image	{
+		display: none;
+	}
 	.den-font-size {	 
 		text-align: center;
 	}
@@ -230,6 +233,23 @@
 		if (show_block!="") showBlcok(show_block);		
 	}
 	
+	
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  /*var dots = document.getElementsByClassName("dot");*/
+	  if (n > slides.length) {slideIndex = 1}
+	  else   if (n < 1) {slideIndex = slides.length}
+				else {slideIndex=n;}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  /*for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }*/
+	  slides[slideIndex-1].style.display = "block";
+	  /*dots[slideIndex-1].className += " active";*/
+	}
 	</script>
  </head>
 <body>
@@ -309,7 +329,14 @@
 </div>
 	<div class="bottom_half">
 
-	<img class="interior_image" id="interior_image_id" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style="object-fit: cover; ">
+	<img class="interior_image mySlides" id="interior_image_id" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style="object-fit: cover; ">
+	<img class="interior_image mySlides" id="interior_image_id" src="https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg" style="object-fit: cover; ">
+	<img class="interior_image mySlides" id="interior_image_id" src="https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg" style="object-fit: cover; ">
+	<img class="interior_image mySlides" id="interior_image_id" src="https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg" style="object-fit: cover; ">
+	<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+	</script>
 	
 	<div class="den-font-size" id="den_font_container" style="font-family:Audiowide; font-size:3em; color:white; 
 		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;">  
@@ -319,10 +346,10 @@
 	</div>
 	
 	<div>
-		<a href="#" class="" onclick="setInteriorImg(1)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style=""></a>
-		<a href="#" class="" onclick="setInteriorImg(2)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg" style=""></a>
-		<a href="#" class="" onclick="setInteriorImg(3)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg" style=""></a>
-		<a href="#" class="" onclick="setInteriorImg(4)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg" style=""></a>		
+		<a href="#" class="" onclick="showSlides(1)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg" style=""></a>
+		<a href="#" class="" onclick="showSlides(2)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg" style=""></a>
+		<a href="#" class="" onclick="showSlides(3)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg" style=""></a>
+		<a href="#" class="" onclick="showSlides(4)"> <img class="thumbnail" src="https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg" style=""></a>		
 	</div>
 	
 	Interior designed by
