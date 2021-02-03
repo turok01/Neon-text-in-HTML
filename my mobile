@@ -53,8 +53,8 @@
 	.input_textarea { 				width: 100%;}
 	.font_buttons {	}
 	
-	.fontsize_selector  { 			width: 30%;		left: 0px;}	
-	.color_selector {				width: 30%;		left: 50%; }
+	.fontsize_selector  { 			width: 30%;		left: 60%;}	
+	.color_selector {				width: 30%;		left: 0px; }
 	
 	.bottom_half{position:absolute;	width: 100%;	}	
 	.interior_image{width: 100%;}
@@ -117,7 +117,7 @@
 		flex-direction: row;
 	}
 	.color_selector{				
-		align: right;
+		align: left;
 		font-family:Verdana;
 		padding:10px;
 	}	
@@ -168,8 +168,18 @@
 	  document.getElementById('den_font_container').style.color = color;
 	  /*den_font_container.style.color = #222222;*/
 	}
+	function setSelectorFont(font){
+		document.getElementById('font_selector').style.setProperty('font-family',font);    
+	}
 	function setNeonFont(font) {  
-	  document.getElementById('den_font_container').style.setProperty('font-family',font);    
+	  if(shadow=='') return;
+	  document.getElementById('den_font_container').style.setProperty('font-family',font); 
+		switch(font){
+		case("Oswald"):
+			document.getElementById('den_font_container').style.setProperty('font-weight',"200"); 
+			break;
+		}
+	  setSelectorFont(font);
 	}
 	function setNeonFont(font,weight) {  
 	  document.getElementById('den_font_container').style.setProperty('font-family',font);    
@@ -293,6 +303,44 @@
 	</div>
 	<div class="selectors">
 
+		
+
+		<div class="color_selector">Выберите цвет надписи:<br>
+			<select name="fontColor" onchange="setNeonTextShadow(this.value)"> 
+			  <option value=''>-цвет-</option>  		  
+			  <option value='white'>Белый</option>
+			  <option value='yellow'>Желтый</option>
+			  <option value='orange'>Оранжевый</option>
+			  <option value='red'>Красный</option>
+			  <option value='#00BFFF'>Голубой</option>
+			  <option value='blue'>Синий</option>
+			  <option value='#adfc88'>Светлый ярко-зеленый</option>
+			  <option value='green'>Зеленый</option>		  
+			</select>
+		</div>
+		<div class="font_selector">Выберите шрифт:<br>
+			<select class="font_selector" name="fontSize" onchange="setNeonFont(this.value);"> 
+			  <option value="">-выберите-</option>  			  
+			  
+			  <option value='Roboto' style="font-size:1em; font-family:Roboto;">Roboto</option>
+			  <option value='Audiowide' style="font-size:1em; font-family:Audiowide;">Audiowide</option>
+			  <option value="Montserrat Alternates" style="font-size:1em; font-family:'Montserrat Alternates'">Montserrat(RU)</option>
+			  <option value="Iceland" style="font-size:1em; font-family:'Iceland'; ">Iceland</option>
+			  <option value='Oswald' style="font-family: 'Oswald'; font-size:1em;">Oswald(RU)</option>  
+			  <option value="Sacramento" style="font-family: 'Sacramento'; font-size:2em;">Sacramento</option>
+			  <option value="Caveat" style="font-family: 'Caveat'; font-size:2em;">Caveat</option>
+			  <option value="Orbitron" style="font-family: 'Orbitron'; font-size:1em;">Orbitron</option>
+			  <option value="Commissioner" style="font-family: 'Commissioner'; font-size:1em;">Commissioner(RU)</option>
+			  <option value="Shadows Into Light" style="font-family: 'Shadows Into Light'; font-size:1em;">Shadows Into Light</option>
+			  <option value="Syncopate" style="font-family: 'Syncopate'; font-size:1em;">Syncopate</option>
+			  <option value="Bad Script" style="font-family: 'Bad Script'; font-size:1em;">Bad Script(RU)</option>
+			  <option value="Julius Sans One" style="font-family: 'Julius Sans One'; font-size:1em;">Julius Sans</option>
+			  <option value="Megrim" style="font-family: 'Megrim'; font-size:1em;">Megrim</option>
+			  <option value="Nova Mono" style="font-family: 'Nova Mono'; font-size:1em;">Nova Mono</option>
+			  <option value="Bellota" style="font-family: 'Bellota'; font-size:1em;">Bellota(RU)</option>				
+			</select>
+		</div>
+		
 		<div class="fontsize_selector">Выберите размер надписи:<br>
 			<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
 			  <option value="">-выберите-</option>  
@@ -307,20 +355,6 @@
 			  <option value=90>90</option>
 			  <option value=100>100</option>
 			  <option value=110>110</option>
-			</select>
-		</div>
-
-		<div class="color_selector">Выберите цвет надписи:<br>
-			<select name="fontColor" onchange="setNeonTextShadow(this.value)"> 
-			  <option value=''>-цвет-</option>  		  
-			  <option value='white'>Белый</option>
-			  <option value='yellow'>Желтый</option>
-			  <option value='orange'>Оранжевый</option>
-			  <option value='red'>Красный</option>
-			  <option value='#00BFFF'>Голубой</option>
-			  <option value='blue'>Синий</option>
-			  <option value='#adfc88'>Светлый ярко-зеленый</option>
-			  <option value='green'>Зеленый</option>		  
 			</select>
 		</div>
 	</div>
