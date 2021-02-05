@@ -41,30 +41,28 @@
 		
 	}
 	.main_class{ }
-	.top_half  {					width:100%; }
-	
-	
-	
+	.top_half  {					width:100%; }	
 	.top_header{								}
 	
-	.text_font_selector{			width:100%;}	
+	.text_font_selector{			width:100%;display:none;}	
+	.color_selector{				width:30%;}
+	.font_selector_container{		width:40%;}
+	.fontsize_selector{				width:30%;}
 	.window_input_text { }
 	.label_input_textarea{ 						}	
 	.input_textarea { 				width: 100%;}
 	.font_buttons {	}
 	
-	.fontsize_selector  { 			width: 30%;		left: 60%; align:bottom;}	
-	.font_selector_container  {			align:bottom;}	
-	.color_selector {				width: 30%;		left: 0px; align:bottom;}
+	
 	
 	.bottom_half{position:absolute;	width: 100%;	}	
 	.interior_image{width: 100%;}
-	.den-font-size {position:absolute;width: 100%;	top: 15%;}
+	.den-font-size {position:absolute;width: 100%;	top: 10%;}
 	
 	
 	.bottom_half{
 		
-		background-color:grey;
+		background-color:white;
 		/*border-radius:10px;	*/
 		object-fit: cover;		
 	}
@@ -117,20 +115,23 @@
 		display: flex;
 		flex-direction: row;
 	}
-	.color_selector{				
-		
+	.color_selector{						
 		font-family:Verdana;
-		padding:5px;
+		padding:2px;
 	}
 	.font_selector_container{
 		font-family:Verdana;
-		padding:5px;
-		
+		padding:2px;		
 	}	
 	.fontsize_selector{				
 		text-align: left;	
 		font-family:Verdana;
-		padding:5px;
+		padding:2px;
+	}
+	.title_selectors{
+		display: flex;
+		flex-direction: row;
+		font-family:Verdana;
 	}
 	
 	.one_font_btn{		
@@ -174,28 +175,18 @@
 	  document.getElementById('den_font_container').style.color = color;
 	  /*den_font_container.style.color = #222222;*/
 	}
-	function setSelectorFont(font){
-		document.getElementById('font_selector_container').style.setProperty('font-family',font);    
-	}
+	
 	function setNeonFont(font) {  
-	  if(shadow=='') return;
+	  if(font=='') return;
 	  document.getElementById('den_font_container').style.setProperty('font-family',font); 
 		switch(font){
 		case("Oswald"):
 			document.getElementById('den_font_container').style.setProperty('font-weight',"200"); 
 			break;
 		}
-	  setSelectorFont(font);
-	}
-	function setNeonFont(font,weight) {
-		if(font==null) return;
-		document.getElementById('den_font_container').style.setProperty('font-family',font); 
-		
-		setSelectorFont(font);
-	
 	  
-		if (weight!='')  document.getElementById('den_font_container').style.setProperty('font-weight',weight);    
 	}
+	
 
 	function setNeonTextColor(color) {
 	  document.getElementById('den_font_container').style.color = color;  
@@ -221,28 +212,7 @@
 		str=document.getElementById('input_text').value; 
 		document.getElementById('show_text_id').innerHTML = str.replace(/\n/g,'<br>');  
 	}
-	function setInteriorImg(direction) {
-		
-		Y=this.scrollY;
-		if(direction==1){
-			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3137-6433-4636-b034-363664353365/interior01.jpg";  
-			/*document.getElementById('den_font_container').style.setProperty('top','300px');*/
-		}
-		if(direction==2){
-			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3132-3461-4139-a362-343839363634/interior02.jpg";  
-			
-		}
-		if(direction==3){
-			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3239-6534-4037-b439-613231383563/interior03.jpg";
-			
-		}
-		if(direction==4){
-			document.getElementById('interior_image_id').src = "https://static.tildacdn.com/tild3463-3466-4566-b839-616330646364/interior04.jpg";  
-			 
-		}
-		this.scrollY=Y;
-		alert(this.scrollY);
-	}
+
 	function showBlcok(block){		
 		document.getElementsByClassName(block)[0].style.display = "block";
 	}
@@ -256,6 +226,11 @@
 	
 	
 	function showSlides(n) {
+		var pos;		
+		/*pos = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+		*/
+		
+		
 	  var i;
 	  var slides = document.getElementsByClassName("mySlides");
 	  /*var dots = document.getElementsByClassName("dot");*/
@@ -270,6 +245,7 @@
 	  }*/
 	  slides[slideIndex-1].style.display = "block";
 	  /*dots[slideIndex-1].className += " active";*/
+	  
 	}
 	</script>
  </head>
@@ -312,9 +288,20 @@
 		
 		
 	</div>
+	<div class="title_selectors">
+		<div class="title_color_selector" style="width:30%; ">
+		Выберите цвет надписи:
+		</div>
+		<div class="title_color_selector" style="width:40%; ">
+		Выберите шрифт:
+		</div>
+		<div class="title_color_selector" style="width:30%; ">
+		Выберите размер надписи:
+		</div>
+	</div>
 	<div class="selectors">		
 
-		<div class="color_selector">Выберите цвет надписи:<br>
+		<div class="color_selector">
 			<select name="fontColor" onchange="setNeonTextShadow(this.value)" > 
 			  <option value=''>-цвет-</option>  		  
 			  <option value='white'>Белый</option>			  
@@ -328,7 +315,7 @@
 			  		  
 			</select>
 		</div>
-		<div class="font_selector_container" >Выберите шрифт:<br><br>
+		<div class="font_selector_container" >
 			<select class="font_selector" name="fontType" onchange="setNeonFont(this.value);"> 
 			  <option value="">-выберите-</option>  			  
 			  
@@ -336,7 +323,7 @@
 			  <option value='Audiowide' style="font-size:1em; font-family:Audiowide;">Audiowide</option>
 			  <option value="Montserrat Alternates" style="font-size:1em; font-family:'Montserrat Alternates'">Montserrat(RU)</option>
 			  <option value="Iceland" style="font-size:1em; font-family:'Iceland'; ">Iceland</option>
-			  <option value='Oswald' style="font-family: 'Oswald'; font-size:1em;">Oswald(RU)</option>  
+			  <option value="Oswald" style="font-family: 'Oswald'; font-size:1em;">Oswald(RU)</option>  
 			  <option value="Sacramento" style="font-family: 'Sacramento'; font-size:2em;">Sacramento</option>
 			  <option value="Caveat" style="font-family: 'Caveat'; font-size:2em;">Caveat</option>
 			  <option value="Orbitron" style="font-family: 'Orbitron'; font-size:1em;">Orbitron</option>
@@ -351,7 +338,7 @@
 			</select>
 		</div>
 		
-		<div class="fontsize_selector">Выберите размер надписи:<br>
+		<div class="fontsize_selector">
 			<select name="fontSize" onchange="setNeonFontSize(this.value)"> 
 			  <option value="">-выберите-</option>  
 			  
